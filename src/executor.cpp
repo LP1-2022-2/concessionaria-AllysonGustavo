@@ -1,9 +1,4 @@
 #include "executor.h"
-#include <istream>
-#include <ostream>
-#include <iostream>
-#include <sstream>
-#include <queue>
 
 using namespace std;
 
@@ -16,6 +11,19 @@ string restoDe(istringstream &ss) {
     resto = resto.substr(1); // o primeiro caractere é um espaço, descartar
   }
   return resto;
+}
+
+// Separar a string 
+
+vector<string> Executor::DividirTexto(string resto) {
+  vector<string> strings;
+    istringstream f(resto);
+    string s;
+    while (getline(f, s, ' ')) {
+        cout << s << endl;
+        strings.push_back(s);
+    }
+  return strings;
 }
 
 // Construtor. Recebe uma referência ao sistema que vai operar
@@ -60,6 +68,43 @@ string Executor::processarLinha(string linha) {
     string nome;    
     nome = restoDe(buf);
     return sistema->create_concessionaria(nome);
+  }
+  else if(nomeComando == "add-car"){
+    string nome;
+    nome = restoDe(buf);
+    return sistema->add_car(nome);
+  }
+  else if(nomeComando == "add-truck"){
+    string nome;
+    nome = restoDe(buf);
+    return sistema->add_truck(nome);
+  }
+  else if(nomeComando == "add-motorcycle"){
+    string nome;
+    nome = restoDe(buf);
+    return sistema->add_motorcycle(nome);
+  }
+  else if(nomeComando == "remove-vehicle"){
+    string nome;
+    nome = restoDe(buf);
+    return sistema->remove_vehicle(nome);
+  }
+  else if(nomeComando == "search-vehicle"){
+    string nome;
+    nome = restoDe(buf);
+    return sistema->search_vehicle(nome);
+  }
+  else if(nomeComando == "save-concessionaria"){
+    
+  }
+  else if(nomeComando == "load-concessionaria"){
+    
+  }
+  else if(nomeComando == "list-concessionaria"){
+    
+  }
+  else if(nomeComando == "raise-price"){
+    
   }
 
   return "Erro";	

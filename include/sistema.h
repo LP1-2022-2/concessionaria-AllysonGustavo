@@ -3,11 +3,12 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <concessionaria.h>
 
 // Sistema deve concentrar todas as operações
 class Sistema {
   private:
-		//std::vector<Concessionaria> concessionarias; //um vetor com todos as concessionarias
+		std::vector<Concessionaria> concessionarias; //um vetor com todos as concessionarias
   public:
 
 		/*Encerra o funcionamento do programa.
@@ -21,7 +22,11 @@ class Sistema {
 		*/
 		std::string create_concessionaria (const std::string nome);
 
-		
+    std::string add_car (const string carro);
+    std::string add_truck (const string caminhao);
+    std::string add_motorcycle (const string moto);
+		std::string remove_vehicle(const string chassi);
+    std::string search_vehicle(const string chassi);
 };
 
 #endif
