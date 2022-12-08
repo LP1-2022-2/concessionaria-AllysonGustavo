@@ -30,6 +30,6 @@ string Veiculo::impressao_search_vehicle(){
   return "Marca: " + marca + "\n" + "Preço: " +  to_string(preco) + "\n" + "Chassi: " +  chassi + "\n" + "Ano: " +  to_string(fabricacao) + "\n";
 }
 
-string Veiculo::impressao_atributo_especifico(){
+/*string Veiculo::impressao_atributo_especifico(){
   return "erro";
-}
+}*/

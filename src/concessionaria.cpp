@@ -61,7 +61,7 @@ bool Concessionaria::remove_vehicle(string chassi){
 string Concessionaria::search_vehicle(string chassi){
   for(int i = 0;i < veiculos.size();i++){
     if(chassi == veiculos[i].get_chassi()){ // Encontrou o chassi
-      return "Concessionaria: " + nome + "\n" + veiculos[i].impressao_search_vehicle() + veiculos[i].impressao_atributo_especifico(); // Encontrou o chassi
+      return "Concessionaria: " + nome + "\n" + veiculos[i].impressao_search_vehicle(); // Encontrou o chassi
     }
   }
   return "Erro ao encontrar o chassi"; // Não encontrou o chassi
