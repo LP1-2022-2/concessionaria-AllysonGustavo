@@ -154,3 +154,51 @@ void Concessionaria::aumentar_preco(int i){
     caminhaos[c].set_preco(atual * (i + 100) / 100);
   }
 }
+
+bool Concessionaria::salvar_estoque() {
+  fstream arm_dados;
+  string dir_dados = nome + ".txt";
+  
+  arm_dados.open(dir_dados, ios::ate | ios::out | ios::trunc);
+  arm_dados << nome << " " << cnpj << " " << estoque << endl;
+  
+  for (int j = 0; j < carros.size(); j++) {
+    if (arm_dados.is_open()) {
+      arm_dados << carros[j].get_marca() << " ";
+      arm_dados << carros[j].get_preco() << " ";
+      arm_dados << carros[j].get_chassi() << " ";
+      arm_dados << carros[j].get_fabricacao() << " ";
+      arm_dados << carros[j].get_tipo_de_motor() << endl;
+    }
+    else{
+      return "Não foi possível abrir o arquivo de dados";
+    }
+  }
+  for (int j = 0; j < motos.size(); j++) {
+    if (arm_dados.is_open()) {
+      arm_dados << motos[j].get_marca() << " ";
+      arm_dados << motos[j].get_preco() << " ";
+      arm_dados << motos[j].get_chassi() << " ";
+      arm_dados << motos[j].get_fabricacao() << " ";
+      arm_dados << motos[j].get_modelo() << endl;
+    }
+    else{
+      return "Não foi possível abrir o arquivo de dados";
+    }
+  }
+  for (int j = 0; j < caminhaos.size(); j++) {
+    if (arm_dados.is_open()) {
+      arm_dados << caminhaos[j].get_marca() << " ";
+      arm_dados << caminhaos[j].get_preco() << " ";
+      arm_dados << caminhaos[j].get_chassi() << " ";
+      arm_dados << caminhaos[j].get_fabricacao() << " ";
+      arm_dados << caminhaos[j].get_tipo_de_carga() << endl;
+    }
+    else{
+      return "Não foi possível abrir o arquivo de dados";
+    }
+  }
+  
+  arm_dados.close(); // Fecha meu arquivo de dados
+  return true; // Todas as operações foram um sucesso
+}

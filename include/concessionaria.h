@@ -5,6 +5,8 @@
 #include <moto.h>
 #include <caminhao.h>
 #include <istream>
+#include <iostream>
+#include <fstream>
 #include <ostream>
 #include <sstream>
 #include <vector>
@@ -15,7 +17,7 @@ using namespace std;
 class Concessionaria {
   private:
   vector<Veiculo> veiculos;
-  vector<Automovel>  carros;
+  vector<Automovel> carros;
   vector<Moto> motos;
   vector<Caminhao> caminhaos;
   int estoque;
@@ -37,6 +39,7 @@ class Concessionaria {
   string search_vehicle(string chassi);
   string lista_concessionaria();
   void aumentar_preco(int i);
+  bool salvar_estoque();
 };
 
 #endif

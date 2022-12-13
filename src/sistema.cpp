@@ -148,3 +148,52 @@ string Sistema::raise_price(const string nome) {
   }
   return "Erro ao adicionar moto!";
 }
+
+string Sistema::save_concessionaria(string nome) {  
+  for (int i = 0; i < concessionarias.size(); i++) {
+    if (concessionarias[i].get_nome() == nome && concessionarias[i].salvar_estoque()) {
+        return "Arquivo " + concessionarias[i].get_nome() + " criado com sucesso";
+    }
+  }
+  return "Erro ao criar arquivo!";
+}
+
+vector <string> Sistema::parse_input(string input) {
+  vector < string > vetor;
+  istringstream parse(input); // Receber entrada da linha
+  string atributo_relativo;
+  while (parse) {
+    parse >> atributo_relativo;
+    if (parse) {
+      vetor.push_back(atributo_relativo);
+    }
+  }
+  return vetor;
+}
+
+string Sistema::load_concessionaria(string dir_arquivo) {
+  ifstream arm_dados;
+  vector < string > elementos_veiculos, concessionaria;
+  string concessionaria_dados, vehicle_data;
+  arm_dados.open(dir_arquivo);
+
+  getline(arm_dados, concessionaria_dados, '\n');
+  concessionaria = parse_input(concessionaria_dados);
+  create_concessionaria(concessionaria_dados);
+  while (!arm_dados.eof()) {
+    getline(arm_dados, vehicle_data, '\n');
+    if (vehicle_data != "") {
+
+      elementos_veiculos = parse_input(vehicle_data);
+      vehicle_data = concessionaria[0] + " " + vehicle_data;
+      if (elementos_veiculos[4] == "gasolina" || elementos_veiculos[4] == "elétrico") {
+        add_car(vehicle_data);
+      } else if (elementos_veiculos[4] == "clássico" || elementos_veiculos[4] == "esportivo") {
+        add_motorcycle(vehicle_data);
+      } else if (elementos_veiculos[4] == "comum" || elementos_veiculos[4] == "perigosa") {
+        add_truck(vehicle_data);
+      }
+    }
+  }
+  return "Concessionaria " + concessionaria[0] + " criada com sucesso";
+}
