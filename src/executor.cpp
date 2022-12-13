@@ -101,14 +101,15 @@ string Executor::processarLinha(string linha) {
     
   }
   else if(nomeComando == "list-concessionaria"){
-    
+    string nome;
+    nome = restoDe(buf);
+    return sistema->list_concessionaria(nome);
   }
   else if(nomeComando == "raise-price"){
-    
+    string nome;
+    nome = restoDe(buf);
+    return sistema->raise_price(nome);
   }
 
   return "Erro";	
 }
-
-
-

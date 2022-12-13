@@ -9,4 +9,7 @@ add-motorcycle IMD_SAA Honda 50000 7BRBLQHEXG0208123 2022 clássico
 remove-vehicle 7BRBLQHEXG0208123
 add-motorcycle IMD_SA Honda 50000 7BRBLQHEXG0208123 2022 clássico
 search-vehicle 9BRBLWHEXG0107721
+list-concessionaria IMD_SA
+raise-price IMD_SA 20
+list-concessionaria IMD_SA
 quit

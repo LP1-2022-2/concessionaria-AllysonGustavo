@@ -18,6 +18,7 @@ class Veiculo {
   Veiculo(string marca,int preco,string chassi,int fabricacao);
   string get_marca(); // Getter
   int get_preco(); // Getter
+  void set_preco(int i);
   string get_chassi(); // Getter
   int get_fabricacao(); // Getter
   string impressao_search_vehicle();
