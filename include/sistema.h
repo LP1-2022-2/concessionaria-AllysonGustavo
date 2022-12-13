@@ -30,9 +30,12 @@ class Sistema {
     std::string list_concessionaria(const string concessionaria);
     std::string raise_price(const string nome);
 <<<<<<< HEAD
+<<<<<<< HEAD
     std::string save_concessionaria(string nome);
     std::vector <string> parse_input(string input);
     std::string load_concessionaria(string dir_arquivo);
+=======
+>>>>>>> 5724194041692fffe07ee27e0ca6fd3df12edb5b
 =======
 >>>>>>> 5724194041692fffe07ee27e0ca6fd3df12edb5b
 };

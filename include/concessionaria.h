@@ -18,7 +18,11 @@ class Concessionaria {
   private:
   vector<Veiculo> veiculos;
 <<<<<<< HEAD
+<<<<<<< HEAD
   vector<Automovel> carros;
+=======
+  vector<Automovel>  carros;
+>>>>>>> 5724194041692fffe07ee27e0ca6fd3df12edb5b
 =======
   vector<Automovel>  carros;
 >>>>>>> 5724194041692fffe07ee27e0ca6fd3df12edb5b
@@ -44,7 +48,10 @@ class Concessionaria {
   string lista_concessionaria();
   void aumentar_preco(int i);
 <<<<<<< HEAD
+<<<<<<< HEAD
   bool salvar_estoque();
+=======
+>>>>>>> 5724194041692fffe07ee27e0ca6fd3df12edb5b
 =======
 >>>>>>> 5724194041692fffe07ee27e0ca6fd3df12edb5b
 };

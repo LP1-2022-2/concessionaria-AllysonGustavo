@@ -154,6 +154,7 @@ void Concessionaria::aumentar_preco(int i){
     caminhaos[c].set_preco(atual * (i + 100) / 100);
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 bool Concessionaria::salvar_estoque() {
@@ -202,6 +203,8 @@ bool Concessionaria::salvar_estoque() {
   
   arm_dados.close(); // Fecha meu arquivo de dados
   return true; // Todas as operações foram um sucesso
+=======
+>>>>>>> 5724194041692fffe07ee27e0ca6fd3df12edb5b
 =======
 >>>>>>> 5724194041692fffe07ee27e0ca6fd3df12edb5b
 }

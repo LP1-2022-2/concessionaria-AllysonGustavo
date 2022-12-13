@@ -148,6 +148,7 @@ string Sistema::raise_price(const string nome) {
   }
   return "Erro ao adicionar moto!";
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 string Sistema::save_concessionaria(string nome) {  
@@ -197,6 +198,8 @@ string Sistema::load_concessionaria(string dir_arquivo) {
     }
   }
   return "Concessionaria " + concessionaria[0] + " criada com sucesso";
+=======
+>>>>>>> 5724194041692fffe07ee27e0ca6fd3df12edb5b
 =======
 >>>>>>> 5724194041692fffe07ee27e0ca6fd3df12edb5b
 }

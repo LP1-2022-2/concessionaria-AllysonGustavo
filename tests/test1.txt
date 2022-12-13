@@ -13,8 +13,11 @@ list-concessionaria IMD_SA
 raise-price IMD_SA 20
 list-concessionaria IMD_SA
 <<<<<<< HEAD
+<<<<<<< HEAD
 save-concessionaria IMD_SA
 load-concessionaria IMD_SA.txt
+=======
+>>>>>>> 5724194041692fffe07ee27e0ca6fd3df12edb5b
 =======
 >>>>>>> 5724194041692fffe07ee27e0ca6fd3df12edb5b
 quit
