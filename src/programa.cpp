@@ -1,3 +1,5 @@
+// Executar o programa: ./build/programa
+// Executar bateria de testes: ./build/programa < ./tests/test1.txt
 #include <iostream>
 #include <list>
 #include <vector>

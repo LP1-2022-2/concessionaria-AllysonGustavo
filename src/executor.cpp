@@ -1,9 +1,4 @@
 #include "executor.h"
-#include <istream>
-#include <ostream>
-#include <iostream>
-#include <sstream>
-#include <queue>
 
 using namespace std;
 
@@ -16,6 +11,19 @@ string restoDe(istringstream &ss) {
     resto = resto.substr(1); // o primeiro caractere é um espaço, descartar
   }
   return resto;
+}
+
+// Separar a string 
+
+vector<string> Executor::DividirTexto(string resto) {
+  vector<string> strings;
+    istringstream f(resto);
+    string s;
+    while (getline(f, s, ' ')) {
+        cout << s << endl;
+        strings.push_back(s);
+    }
+  return strings;
 }
 
 // Construtor. Recebe uma referência ao sistema que vai operar
@@ -61,9 +69,51 @@ string Executor::processarLinha(string linha) {
     nome = restoDe(buf);
     return sistema->create_concessionaria(nome);
   }
+  else if(nomeComando == "add-car"){
+    string nome;
+    nome = restoDe(buf);
+    return sistema->add_car(nome);
+  }
+  else if(nomeComando == "add-truck"){
+    string nome;
+    nome = restoDe(buf);
+    return sistema->add_truck(nome);
+  }
+  else if(nomeComando == "add-motorcycle"){
+    string nome;
+    nome = restoDe(buf);
+    return sistema->add_motorcycle(nome);
+  }
+  else if(nomeComando == "remove-vehicle"){
+    string nome;
+    nome = restoDe(buf);
+    return sistema->remove_vehicle(nome);
+  }
+  else if(nomeComando == "search-vehicle"){
+    string nome;
+    nome = restoDe(buf);
+    return sistema->search_vehicle(nome);
+  }
+  else if(nomeComando == "save-concessionaria"){
+    string nome;
+    nome = restoDe(buf);
+    return sistema->save_concessionaria(nome);
+  }
+  else if(nomeComando == "load-concessionaria"){
+    string nome;
+    nome = restoDe(buf);
+    return sistema->load_concessionaria(nome);
+  }
+  else if(nomeComando == "list-concessionaria"){
+    string nome;
+    nome = restoDe(buf);
+    return sistema->list_concessionaria(nome);
+  }
+  else if(nomeComando == "raise-price"){
+    string nome;
+    nome = restoDe(buf);
+    return sistema->raise_price(nome);
+  }
 
   return "Erro";	
 }
-
-
-

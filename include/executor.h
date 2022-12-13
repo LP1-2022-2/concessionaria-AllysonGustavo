@@ -4,6 +4,7 @@
 #include <istream>
 #include <ostream>
 #include <sstream>
+#include <queue>
 
 using namespace std;
 
@@ -15,9 +16,8 @@ class Executor {
 
   public:
   Executor(Sistema &sistema);
-
   void iniciar(istream &in, ostream &out);
-
+  vector<string> DividirTexto(string resto);
   string processarLinha(string linha);
 };
 
