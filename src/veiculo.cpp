@@ -17,6 +17,9 @@ string Veiculo::get_marca(){
 int Veiculo::get_preco(){
   return preco;
 }
+void Veiculo::set_preco(int i){
+  preco = i;
+}
 
 string Veiculo::get_chassi(){
   return chassi;

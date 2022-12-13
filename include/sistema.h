@@ -27,6 +27,8 @@ class Sistema {
     std::string add_motorcycle (const string moto);
 		std::string remove_vehicle(const string chassi);
     std::string search_vehicle(const string chassi);
+    std::string list_concessionaria(const string concessionaria);
+    std::string raise_price(const string nome);
 };
 
 #endif

@@ -44,7 +44,7 @@ string Sistema::add_car(const string carro) {
     }
     if (concessionarias[i].get_nome() == strings[0]) { // Verifica se o nome da concessionária é igual ao nome digitado pelo usuario
       Automovel carro(strings[1], stoi(strings[2]), strings[3], stoi(strings[4]), strings[5]);
-      concessionarias[i].add_veiculo(carro);
+      concessionarias[i].add_carro(carro);
       return "Carro adicionado com sucesso!";
       break;
     }
@@ -66,7 +66,7 @@ string Sistema::add_truck(const string caminhao) {
     }
     if (concessionarias[i].get_nome() == strings[0]) {
       Caminhao caminhao(strings[1], stoi(strings[2]), strings[3], stoi(strings[4]), strings[5]);
-      concessionarias[i].add_veiculo(caminhao);
+      concessionarias[i].add_caminhao(caminhao);
       return "Caminhão adicionado com sucesso!";
       break;
     }
@@ -88,7 +88,7 @@ string Sistema::add_motorcycle(const string moto) {
     }
     if (concessionarias[i].get_nome() == strings[0]) {
       Moto moto(strings[1], stoi(strings[2]), strings[3], stoi(strings[4]), strings[5]);
-      concessionarias[i].add_veiculo(moto);
+      concessionarias[i].add_moto(moto);
       return "Moto adicionada com sucesso!";
       break;
     }
@@ -116,4 +116,35 @@ string Sistema::search_vehicle(const string chassi) {
     }
   }
   return "Erro ao encontrar o veículo";
+}
+
+string Sistema::list_concessionaria(const string concessionaria) {
+  string saida;
+  for (int i = 0; i < concessionarias.size(); i++) {
+    if (concessionarias[i].get_nome() == concessionaria) {
+      saida =  concessionarias[i].lista_concessionaria();
+      return saida;
+    }
+  }
+  return "Erro ao encontrar o veículo";
+}
+
+string Sistema::raise_price(const string nome) {
+  vector < string > strings;
+  istringstream f(nome);
+  string s;
+  while (getline(f, s, ' ')) {
+    strings.push_back(s);
+  }
+  // Buscar a concessinaria digitada
+
+  for (int i = 0; i < concessionarias.size(); i++) {
+    if (concessionarias[i].get_nome() == strings[0]) {
+      concessionarias[i].aumentar_preco(stoi(strings[1]));
+      return "Aumento de " + strings[1] + "% nos preços de automóveis da Concessionária IMD_SA realizado\n" +
+"Aumento de " + to_string(stoi(strings[1]) * 2) +  "% nos preços de motos da Concessionária IMD_SA realizado\n" +
+"Aumento de " + to_string(stoi(strings[1]) * 3) +  "% nos preços de caminhões da Concessionária IMD_SA realizado";
+    }
+  }
+  return "Erro ao adicionar moto!";
 }
