@@ -12,4 +12,9 @@ search-vehicle 9BRBLWHEXG0107721
 list-concessionaria IMD_SA
 raise-price IMD_SA 20
 list-concessionaria IMD_SA
+<<<<<<< HEAD
+save-concessionaria IMD_SA
+load-concessionaria IMD_SA.txt
+=======
+>>>>>>> 5724194041692fffe07ee27e0ca6fd3df12edb5b
 quit

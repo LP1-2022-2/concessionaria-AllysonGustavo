@@ -22,6 +22,11 @@ Os comandos existentes são:
 "search-vehicle (chassi)" para procurar um veículo (Ex: search-vehicle 9BRBLWHEXG0107721)
 "list-concessionaria (concessionária)" para ver as informações de uma concessionária (Ex: list-concessionaria IMD_SA)
 "raise-price (concessionária) (porcentagem)" para aumentar em x% o valor dos veiculos de uma concessionária (Ex: raise-price IMD_SA 10)
+<<<<<<< HEAD
+"save-concessionaria (concessinária)" para salvar a concessionária em um arquivo .txt (Ex: save-concessionaria IMD_SA)
+"load-concessionaria (concessinária)" para carregar uma concessionária em um arquivo .txt (Ex: load-concessionaria IMD_SA)
+=======
+>>>>>>> 5724194041692fffe07ee27e0ca6fd3df12edb5b
 "quit" para encerrar o programa
 
 # Limitações
@@ -53,7 +58,11 @@ Os comandos existentes são:
   - 0: comando não implementado
   - 10: comando implementado e funcional
 
+<<<<<<< HEAD
+- Implementação e uso do comando para busca de veículos `search-vehicle` | **15 / 15 - Bônus: ...**
+=======
 - Implementação e uso do comando para busca de veículos `search-vehicle` | **10 / 15 - Bônus: ...**
+>>>>>>> 5724194041692fffe07ee27e0ca6fd3df12edb5b
   - 0: não implementado
   - 15: implementado e funcional
   - bonus +10: implementado com estratégia de busca diferente da busca exaustiva
@@ -70,7 +79,7 @@ Os comandos existentes são:
   - 10: implementado e funcional 
   - bonus +10: implementado com uso de método virtual
 
-- Implementação e uso do comando `save-concessionaria` e `load-concessionaria` | **... / 30**
+- Implementação e uso do comando `save-concessionaria` e `load-concessionaria` | **30 / 30**
   - 0: não implementado
   - 15: ambos os comandos implementados e funcionais
   
@@ -94,6 +103,10 @@ Os comandos existentes são:
  
  # Total
  
+<<<<<<< HEAD
+ **150 / 150 ** pontos (sem bônus)
+=======
  **115 / 150 ** pontos (sem bônus)
+>>>>>>> 5724194041692fffe07ee27e0ca6fd3df12edb5b
  
  **... / 200 ** pontos (com bônus)

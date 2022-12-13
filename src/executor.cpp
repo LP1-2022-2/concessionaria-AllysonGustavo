@@ -95,10 +95,14 @@ string Executor::processarLinha(string linha) {
     return sistema->search_vehicle(nome);
   }
   else if(nomeComando == "save-concessionaria"){
-    
+    string nome;
+    nome = restoDe(buf);
+    return sistema->save_concessionaria(nome);
   }
   else if(nomeComando == "load-concessionaria"){
-    
+    string nome;
+    nome = restoDe(buf);
+    return sistema->load_concessionaria(nome);
   }
   else if(nomeComando == "list-concessionaria"){
     string nome;
